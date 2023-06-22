@@ -1,5 +1,5 @@
 ---
-title: "Çalışmanızın Başlığı"
+title: "Kalp Yetmezliği Hastalarında Hayatta Kalma Analizi"
 author: 
   - İsim Soyisim[^1]
 bibliography: ../bibliography/biblio.bib
@@ -25,7 +25,7 @@ urlcolor: blue
 fontsize: 12pt
 biblio-style: apalike
 abstract: |
-  Bu bölümde çalışmanızın özetini yazınız.
+ Her yıl kardiyovasküler hastalık 17 milyon insanın ölümüne sebep olmaktadır. Kardiyovasküler hastalığın başında gelen miyokard enfarktüsü ve kalp yetmezliği şeklinde kendini göstermektedir. Kalp, kanın vücut için gerekli olduğu kadarki kısmını yeteri kadar pompalayamadığında ya da pompaladığı ancak bunu yaparken normalden daha fazla yorulduğu zaman kalp yetmezliği gelişmektedir. 2015 yılında 299 kalp yetmezliği hastası üzerinden yapılan incelemeler sonucunda, hastanın tedavi süreci ve hayatta kalma şansı değerlendirilmek istenmiştir. Hastanın kardiyak fonksiyonları, ileri evre semptomları ve ilaç kullanımı gibi faktörler tedavi etkinliği açısından değerlendirilmiştir. Kalp gibi hayati bir organın önemi göz önüne alındığında, kalp yetmezliğini tahmin etmek doktorlar için bir öncelik haline gelmiştir. Bu bağlamda, elektronik sağlık kayıtları (tıbbi kayıtlar olarak da adlandırılır), yalnızca araştırma için değil, aynı zamanda klinik uygulama için de hasta verileri arasındaki gizli ve açık olmayan ilişkileri ortaya çıkarmaya yönelik yararlı bir bilgi kaynağı olarak düşünülebilir. Bu amaçla, son yıllarda risk faktörlerine ilişkin bilgileri derinleştirmek için farklı koşulları ve demografik özellikleri kapsayan, farklı veri kaynakları ile çok sayıda tarama çalışması yapılmıştır.Klinik olarak, kalp yetmezliği ejeksiyon fraksiyon değerine göre iki türe ayırır. İlki, daha önce sol ventriküler (LV) sistolik disfonksiyon veya sistolik kalp yetmezliğine bağlı kalp yetmezliği olarak bilinen ve %40'tan daha küçük bir ejeksiyon fraksiyonu ile karakterize edilen azalmış ejeksiyon fraksiyonuna bağlı kalp yetmezliğidir. İkincisi, eskiden diyastolik kalp yetmezliği veya normal ejeksiyon fraksiyonlu kalp yetmezliği olarak adlandırılan, korunmuş ejeksiyon fraksiyonu ile kalp yetmezliğidir. Bu durumda, sol ventrikül sistol sırasında normal olarak kasılır, ancak ventrikül serttir ve diyastol sırasında normal olarak gevşememekte, dolayısıyla dolumu bozmaktadır
 ---
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(cache = FALSE, echo = TRUE, message = FALSE, warning = FALSE)
@@ -34,92 +34,313 @@ knitr::opts_chunk$set(cache = FALSE, echo = TRUE, message = FALSE, warning = FAL
 <!-- ======================================================================= -->
 <!-- ============================== NOTLAR ================================= -->
 <!-- ======================================================================= -->
-[^1]: Öğrenci Numarası, [Github Repo](https://github.com/KULLANICI_ADINIZ/REPO_ADINIZ)
-
-# Final Hakkında Önemli Bilgiler
-
-\colorbox{BurntOrange}{GITHUB REPO BAĞLANTINIZI BU DOSYANIN 37. SATIRINA YAZINIZ!}
-
-**Proje gönderimi, Github repo linki ile birlikte ekampus sistemine bir zip dosyası yüklenerek yapılacaktır. Sisteme zip dosyası yüklemezseniz ve Github repo linki vermezseniz ara sınav ve final sınavlarına girmemiş sayılırsınız.**
-
-**Proje klasörünüzü sıkıştırdıktan sonra (`OgrenciNumarasi.zip` dosyası) 9 Haziran 2023 23:59'a kadar *ekampus.ankara.edu.tr* adresine yüklemeniz gerekmektedir.**
-
-\colorbox{WildStrawberry}{Daha fazla bilgi için proje klasöründeki README.md dosyasını okuyunuz.}
+[^1]: 20080699, [Github Repo](https://github.com/metinh/butunleme.odev)
 
 # Giriş
-Bu taslak size proje ödevinizi yazarken yardımcı olması amacıyla oluşturulmuştur. Ödevlerinizde, makalelerinizde, sunumlarınızda ve projelerinizde kullandığınız tüm bilgi kaynaklarına atıfta bulunmalısınız. Alıntı ve gönderme yapmak okuyuculara çalışmanızda kullandığınız/başvurduğunuz  kaynaklara ulaşma imkanı sağlar. **Her ne kadar kendi sözlerinizi kullanıyor olsanız da, başkalarına ait fikirleri çalışmanızda aktarıyorsanız bu fikirlerin kaynağını belgelemek zorundasınız. Aksi takdirde akademik intihal yapmış olursunuz.** Yazım konusunda @aydinonat:2007'ye başvurabilirsiniz. 
+Kalp yetmezliği, kalp duvarındaki kasların solup büyüdüğü ve kalbin kan pompalamasını sınırladığı durumdur. Kalbin ventrikülleri esnek olmayabilir ve atımlar arasında düzgün bir şekilde dolmayabilir. Zamanla kalp, vücuttaki kanın uygun talebini karşılayamaz hale gelir ve bunun sonucunda kişi nefes almakta güçlük çekmeye başlar.
 
+Kalp yetmezliğinin ana nedeni koroner kalp hastalığı , diyabet , yüksek tansiyon ve HIV, alkol kötüye kullanımı veya kokain, tiroid bozuklukları, vücutta E vitamini fazlalığı, radyasyon veya kemoterapi vb . Kardiyovasküler Kalp Hastalığı (KKH) şu anda dünya çapında ölümlerin %31'ine neden olan en önemli nedendir. Pakistan da KKH prevalansının önemli ölçüde arttığı ülkeler listesine dahil edilmiştir.
 
-Proje ödevinizde yer alan başlıkların bu metinde yer alan başlıkları kesinlikle içermesi gerekmektedir. Burada kullanılan başlıklar haricinde farklı alt başlıklar da kullanabilirsiniz. Projenizi yazarken bu dosyayı taslak olarak kullanıp içeriğini projenize uyarlayınız.
+Bu bölgede kalp yetmezliğine odaklanan çalışmaların görece azlığına ek olarak, Pakistan'daki diyet kalıpları Hindistan, Bangladeş, Nepal ve Sri Lanka gibi diğer Güney Asya ülkelerinden farklı olduğundan, bu çalışma Pakistan bağlamında özel bir öneme sahiptir.
 
 ## Çalışmanın Amacı
-Bu bölümde yaptığınız çalışmanın amacından ve öneminden birkaç paragraf ile bahsediniz.
+Bu çalışmada amaç bir kalp yetmezliği hastasının hayatta kalma şansını etkileyen faktörleri incelemek ve vaka örnekleri üzerinden bu hastalığın tedavisinde dikkat edilmesi gereken noktaları açıklamaktır. Ölüm olayını; hastanın kardiyak fonksiyonları, semptomları ve ilaç kullanımı gibi faktörleri ele alarak aralarındaki ilişkiyi matematiksel bir eşitlik ile açıklamaktır. Amaç, kalp yetmezliği hastalarının tedavi edilmesindeki zorlukları anlamak ve tedavi sürecinde kaliteli bir yaşam sürdürebilmeleri için neler yapılması gerektiğini belirtmektir. @ahmad2017survival
+
+Bu çalışmanın temel amacı, çalışma alanı olarak Faysalabad'ı (Pakistan'ın en kalabalık üçüncü  şehri) seçerek kalp yetmezliğine bağlı ölüm oranlarını tahmin etmek ve bazı önemli risk faktörleriyle bağlantısını araştırmaktır.
+Kalbin vücuda yeteri kadar kan pompalamaması sonucu görülen kalp yetmezliği sigara kullanımı, yüksek tansiyon, diyabet, stres gibi faktörler ile daha hızlı ilerlemektedir. Bu hastalığa bağlı hayatta kalma analizi için bir model geliştirmek üzere hastaların belirli bir süre takip edilmesi ve hasta öldüğünde hasta ile ilgili verilerin kayıt altına alınması gerekmektedir.
 
 ## Literatür 
 
-Bu bölümde konu ile ilgili olarak okuduğunuz makaleleri referans vererek tartışınız. **Her makaleyi ayrı başlık altında tek tek özetlemeyiniz.** Literatür taramasında **en az altı** makaleye atıf yapılması ve bu makalelerden **en az ikisinin İngilizce** olması gerekmektedir.
+Kalp yetmezliği, kalp duvarındaki kasların solup büyüdüğü ve kalbin kan pompalamasını sınırladığı durumdur. Kalbin ventrikülleri esnek olmayabilir ve atımlar arasında düzgün bir şekilde dolmayabilir. Zamanla kalp, vücuttaki kanın uygun talebini karşılayamaz hale gelir ve bunun sonucunda kişi nefes almakta güçlük çekmeye başlar.
+
+Kalp yetmezliğinin ana nedeni koroner kalp hastalığı , diyabet , yüksek tansiyon ve HIV, alkol kötüye kullanımı veya kokain, tiroid bozuklukları, vücutta E vitamini fazlalığı, radyasyon veya kemoterapi vb . Kardiyovasküler Kalp Hastalığı (KKH) şu anda dünya çapında ölümlerin %31'ine neden olan en önemli nedendir. Pakistan da KKH prevalansının önemli ölçüde arttığı ülkeler listesine dahil edilmiştir. Al-Shifa hastanesinin raporuna göre, 45 yaş üstü Pakistan nüfusunun %33'ünde hipertansiyon var, 45 yaş üstü hastaların %25'inde diyabet var ve Pakistan'da KKH ölümleri yılda yaklaşık 200.000'e ulaştı, yani nüfusun 410/100.000'i). Bütün bunlar kalp yetmezliği prevalansının artmasına neden olur. Pakistan'da kalp yetmezliği hastalarının oranının milyonda 110 olduğu tahmin edilmektedir. Modern çağda ekonomik ve sosyal sorunların artan stresi, az egzersizle yağlı yiyecekler Pakistan'da kalp yetmezliği prevalansının artmasına neden oluyor.
+
+Bu endişe verici duruma rağmen, Pillai ve Ganapathi bu bölgede kötü ve yağlı beslenme, egzersiz eksikliği ve kötü sağlık politikaları nedeniyle gerekliyken, bu bölgede kalp yetmezliği insidansı ve prevalansına ilişkin güvenilir tahminlerin bulunmadığını bildirdiler. bölge. Sadece batı ülkelerinden elde edilen yaygınlık verilerine dayanan bazı tahminler vardır.
+
+Bu bölgede kalp yetmezliğine odaklanan çalışmaların görece azlığına ek olarak, Pakistan'daki diyet kalıpları Hindistan, Bangladeş, Nepal ve Sri Lanka gibi diğer Güney Asya ülkelerinden farklı olduğundan, bu çalışma Pakistan bağlamında özel bir öneme sahiptir.@ahmad2017survival
+
+Bu çalışmada, Ahmad ve arkadaşları tarafından yayınlanan, kalp yetmezliği olan hastaların tıbbi kayıtlarını içeren bir veri kümesini makine öğrenme algoritmaları ile 
+analiz ederek, hastaların kalp yetmezliğine bağlı olarak hayatta kalma veya ölme durumu tahmini üzerine çalışılmıştır. Bu amaçla, ilgili veri kümesinde bulunan 12 özniteliğin bir kural (One Rule-1Rule), Rastgele Orman (Random Forest RF), Destek Vektör Makinesi (Support Vector Machine SVM), Çok Katmanlı Perseptron (Multi Layer Perceptron MLP) ve Naif Bayes (Navie Bayes) gibi makine öğrenimi yöntemlerini ayrı ayrıbeslediği bir mortalite tahmin uygulaması tasarlanmıştır. Daha sonra doğru tahmin oranını arttırmak/çalışma maliyetini azaltmak için korelasyon tabanlı öznitelik seçim algoritması kullanılarak kardiyovasküler hastalıklar için görece anlamlı öznitelikleri ortaya çıkarmak adına öznitelikler seçilmiştir. @erdacskalp
 
 # Veri 
-Bu bölümde çalışmanızda kullandığınız veri setinin kaynağını, ham veri üzerinde herhangi bir işlem yaptıysanız bu işlemleri ve veri seti ile ilgili özet istatistikleri tartışınız. Bu bölümde tüm değişkenlere ait özet istatistikleri (ortalama, standart sapma, minimum, maksimum, vb. değerleri) içeren bir tablo (Tablo \ref{tab:ozet}) olması zorunludur. Tablolarınıza gerekli göndermeleri bir önceki cümlede gösterildiği gibi yapınız. [@perkins:1991]
+2015 yılında toplanan Faysalabad Kardiyoloji Enstitüsü ve Faisalabad'daki (Pencap, Pakistan) Allied Hastanesinde toplanan 299 kalp yetmezliği hastasının tıbbi kayıtlarını içeren bir veri seti kullanılmıştır. Hastaların 105’i kadın, 194’ü erkek ve yaşları 40-95 arasında değişmektedir.
 
-Analize ait R kodları bu bölümde başlamalıdır. Bu bölümde veri setini R'a aktaran ve özet istatistikleri üreten kodlar yer almalıdır.
+`Veri R'a yüklenmiştir.`
 
-```{r}
-library(tidyverse)
-library(here)
-survey <- read_csv(here("../data/survey.csv"))
+```{r include=FALSE}
+veri=read.csv("C:\Users\ASUS\Desktop\heart_failure_clinical_records_dataset.csv")
+veri
+```
+`Verideki değişkenlerin isimlerini değiştirelim`
+
+```{r echo=FALSE}
+names(veri)[1]="Yaş"
+names(veri)[2]="Anemi"
+names(veri)[3]="Kreatinin Fosfokinaz"
+names(veri)[4]="Diyabet"
+names(veri)[5]="Enjeksiyon Fraksiyonu"
+names(veri)[6]="Yüksek Kan Basıncı"
+names(veri)[7]="Trombositler"
+names(veri)[8]="Serum Kreatinin"
+names(veri)[9]="Serum Sodyum"
+names(veri)[10]="Cinsiyet"
+names(veri)[11]="Sigara içmek"
+names(veri)[12]="Zaman"
+names(veri)[13]="ÖlÜm Olayı"
 ```
 
-Rmd dosyasında kod bloklarının bazılarında kod seçeneklerinin düzenlendiğine dikkat edin. 
+`Betimsel istatistiklerini oluşturalım.`
 
-```{r, echo=FALSE}
-library(xtable) 
-# devtools::install_github("emraher/summarytools")
-library(summarytools)
-st_options(lang = "tr")
+```{r echo=FALSE}
+summary(veri)
 ```
 
-`echo=FALSE` seçeneği ile kodların türetilen pdf dosyasında görünmesini engelleyin ve sonuçlarınızı tablo halinde rapor edin.
+`Değişkenlerin standart sapmalarını hesaplıyalım.`
 
-```{r results='asis', echo=FALSE}
-survey %>%
-  select("sex", "credits", "handedness", "height", "handspan") %>% 
-  descr(stats = c("mean", "sd", "min", "med", "max"), transpose = TRUE) %>% 
-  xtable(caption = "Özet İstatistikler",
-         label = "tab:ozet",
-         align = c("l", "c", "c", "c", "c", "c")) %>% 
-  print(booktabs = TRUE, comment = FALSE, caption.placement = "top")
+```{r echo=FALSE}
+sd(veri$Yaş)
+sd(veri$Anemi)
+sd(veri$`Kreatinin Fosfokinaz`)
+sd(veri$Diyabet)
+sd(veri$`Enjeksiyon Fraksiyonu`)
+sd(veri$`Yüksek Kan Basıncı`)
+sd(veri$Trombositler)
+sd(veri$`Serum Kreatinin`)
+sd(veri$`Serum Sodyum`)
+sd(veri$Cinsiyet)
+sd(veri$`Sigara içmek`)
+sd(veri$Zaman)
+sd(veri$'ÖlÜm Olay')
 ```
 
+```{r echo=FALSE}
+colnames(veri)
+```
+
+```{r echo=FALSE}
+head(veri)
+```
+
+```{r echo=FALSE}
+library(VIM)
+eksik <- aggr(veri)
+eksik
+summary(eksik)
+colnames(veri)
+head(veri)
+x=is.na(veri)
+summary(x)
+```
 
 # Yöntem ve Veri Analizi
-Bu bölümde veri setindeki bilgileri kullanarak çalışmanın amacına ulaşmak için kullanılacak yöntemleri açıklayın. Derste işlenen/işlenecek olan analiz yöntemlerinden (Hipotez testleri ve korelasyon analizi gibi) çalışmanın amacına ve veri setine uygun olanlar bu bölümde kullanılmalıdır. [@newbold:2003; @ozsoy:2010; @ozsoy:2014]
-
-Örneğin, regresyon analizi gerçekleştiriyorsanız tahmin ettiğiniz denklemi bu bölümde tartışınız. Denklemlerinizi ve matematiksel ifadeleri $LaTeX$ kullanarak yazınız.
+Bir değişkeni çok fazla sayıda değişken bir araya gelerek o değişkeni etkileyebilmektedirler. Bu değişkenler aynı zamanda kendi aralarında da birbirlerini etkileyebilmektedir. Birden fazla bağımsız değişken kullanılarak yapılan regresyon analizine "çoklu regresyon analizi (multipleregression analysis)" adı verilmektedir. Çoklu doğrusal regresyon denklemi aşağıda verilmiştir.
 
 $$
 Y_t = \beta_0 + \beta_N N_t + \beta_P P_t + \beta_I I_t + \varepsilon_t
 $$
 
-Bu bölümde analize ilişkin farklı tablolar ve grafiklere yer verilmelidir. Çalışmanıza uygun biçimde histogram, nokta grafiği (Şekil \@ref(fig:plot) gibi), kutu grafiği, vb. grafikleri bu bölüme ekleyiniz. Şekillerinize de gerekli göndermeleri bir önceki cümlede gösterildiği gibi yapınız.
+Çoklu Doğrusal Regresyonda değişkenler nicel olmalıdır. Doğrusal Regresyon için varsayımlar vardır. Bu varsayımlardan biri normal dağılım ve korelasyon analizi (doğrusal ilişki olmalıdır) önem taşır.
+
+Bu çalışmada çoklu doğrusal regresyon analizinden yardım alınmıştır. Çoklu Doğrusal Regresyonun amacı, amacımız olan ölüm olayı ile diğer faktörler arasındaki en iyi denklemi çıkarabilmektir.
+
+`Normallik testi`
+
+Pek çok çalışmada normallik varsayımı kontrol edildikten sonra yapılacak analizlerin çeşitlerine karar verilir. Veri setinin normal dağılması durumunda dağılımın şekli simetrik bir çan eğrisine benzemektedir.
+
+Aşağıdaki verilerin normallik testinde çıkan değerleri verilmektedir.
+H0: Veriler Normal Dağılıma Sahiptir.
+H1: Veriler Normal Dağılıma Sahip Değildir.
+
+```{r echo=FALSE}
+shapiro.test(veri$Yaş)
+shapiro.test(veri$Anemi)
+shapiro.test(veri$`Kreatinin Fosfokinaz`)
+shapiro.test(veri$Diyabet)
+shapiro.test(veri$`Enjeksiyon Fraksiyonu`)
+shapiro.test(veri$`Yüksek Kan Basıncı`)
+shapiro.test(veri$Trombositler)
+shapiro.test(veri$`Serum Kreatinin`)
+shapiro.test(veri$`Serum Sodyum`)
+shapiro.test(veri$Cinsiyet)
+shapiro.test(veri$`Sigara içmek`)
+shapiro.test(veri$Zaman)
+shapiro.test(veri$`ÖlÜm Olayı`)
+```
+
+Yukarıdaki verilen değerlere bakıldığında tüm değerler 0.05’ten küçüktür (p-value < 0.05). Bu değerler 0.05’ten küçük olduğundan H0 red edilemez. Yani Veriler Normal Dağılıma Sahiptir.
+
+`Korelasyon Matrisi oluşturalım`
+
+Korelasyon analizi, iki nicel değişken arasındaki doğrusal ilişkinin gücü ve yönü hakkında sayısal bilgi verir.
+
+Aşağıdaki verilerin korelasyon testinde çıkan değerleri vermektedir.
 
 
-```{r plot, fig.align='center', fig.cap='Muhteşem Bir Grafik'}
-survey %>% 
-  ggplot(aes(x = handedness, y = handspan)) +
-  geom_point() +
-  geom_smooth() +
-  scale_x_continuous("Handedness") + 
-  scale_y_continuous("Handspan")
+```{r echo=FALSE}
+korelasyon_matris <- cor(veri)
+korelasyon_matris
+```
+
+Korelasyon değeri eğer pozitif yönlü bir değer alırsa pozitif yönlü bir ilişki, negatif bir değer alır ise her iki değişken arasında negatif yönlü bir ilişki vardır. Tablo3. daki değerler faktörlerin birbiriyle aralarındaki ilişkinin korelasyon değerleri ve aldığı işarete göre de pozitif negatif yönünü belirtmektedir.
+
+Örneğin; Yaş ile Diyabet arasındaki korelasyon katsayısı -0.101012385 ≈0.10 olarak hesaplanmıştır. Yaş ile Diyabet arasında negatif düşük yönlü bir ilişki vardır.
+
+`Çoklu Doğrusal Regresyon`
+
+R programlamada gerekli kodlar yazılarak sonuçlar görüntülenmiştir. Bu sonuçlar tablo haline getirilmiştir.Çoklu doğrusal regresyon analizinin sonuçları verilmiştir.
+
+
+
+## R işlevi lm(), doğrusal modelin beta katsayılarını belirlemek için kullanılabilir:
+```{r echo=FALSE}
+regresyon <- lm(formula = veri$`ÖlÜm Olayı` ~ ., data = veri)
+regresyon
+summary(regresyon)
+```
+Residual standard error: 0.3646 on 286 degrees of freedom
+Multiple R-squared:  0.4168,	Adjusted R-squared:  0.3924 
+F-statistic: 17.04 on 12 and 286 DF,  p-value: < 2.2e-16
+
+
+Modelin anlamlı olup olmadığını çıkan sonuçlara bakarak yorum yapmaya çalışalım;
+
+H0: Model anlamlı değildir.
+H1: Model anlamlıdır.
+
+Hesaplanan p değerine bakıldığında p-value değeri < 2.2e-16 olarak hesaplanmıştır. Bu değer 0.01’den bile küçük bir değer olduğunu söyleyebiliriz. P-value değeri 0.05’ten küçük olduğundan (p-value < 0.05) H0 hipotezi red edilir. Yani modelimizin anlamlı olduğunu söyleyebiliriz.
+
+Modelin anlamlı olup olmadığını söyleyebilmek için F istatistik değerine bakarak da karar verebiliriz. 
+
+F_((0.05;12;286))≈〖3.86〗^' dır. (F tablosuna bakıldı)
+
+F_Hesap=17.04 yani F_Hesap> F_((0.05;12;286)) olduğundan H0 hipotezimiz reddedilir. Yani buradan da modelimizin anlamlı olduğunu söyleyebiliriz.
+
+Katsayıların anlamlılıklarını test etmezsek doğru bir analiz yapmış olmayız bu yüzden anlamlılıklarını test edelim:
+
+H0: Sabit terim anlamlı değildir.
+H1: Sabit terim anlamlıdır.
+
+t_Hesap=2.392
+
+t_((0.025;286) )=1.960 (t tablosuna bakıldı)
+
+t_Hesap > t_((0.025;286) ) olduğundan H0 hipotezimiz reddedilir yani Sabit terimin anlamlı olduğunu söyleyebiliriz.
+
+Regresyon modeli;
+ 
+Y=(1.664e+00)+(5.767e-03) X_1+(-9.834e-03) X_2+(8.527e-02) X_3+(-2.733e-03)X_4+ε
+
+şeklinde model oluşturulabilir.
+
+R2 yani çoklu belirtme katsayısı, bağımlı değişkendeki değişimin yüzde kaçının bağımsız değişkence açıklanabileceğini gösterir. Bu değer 0 ile 1 arasında değer alır ve bu değerin 1’e yakın olması bağımsız değişkenin bağımlı değişkeni iyi bir şekilde açıkladığı anlamına gelir ve bu da bizim istediğimiz bir durumdur. Bu bilgileri verdikten sonra çözümlememize dönecek olursak bizim çoklu belirtme katsayımız 0.4168 olarak açıklanmıştır.
+
+
+
+Tüm değişkenlerin birbirine bağlılık derecesini daha net bir şekilde görülebilir. Grafik üzerindeki koyu mavi noktalar güçlü pozitif korelasyonları, koyu kırmızı noktalar ise güçlü negatif korelasyonları göstermektedir. Diğer daireler de renklerine ve büyüklüklerine göre korelasyonun gücünü ve yönünü belirtmektedir.
+
+Örneğin; Ölüm Olayı ile zaman arasında negatif yüksek korelasyonlu bir ilişki vardır.
+`Korelasyon Grafiği`
+
+Çeşitli grafik yöntemleriyle de yapılan analizleri destekleyici ve göze hitabı arttırmayı sağlayalım.
+ 
+
+```{r echo=FALSE, fig.height=10, fig.width=10}
+library(corrplot)
+corrplot(korelasyon_matris, method = 'circle')
+head(veri)
+str(veri)
+```
+Şekile bakıldığında tüm değişkenlerin birbirine bağlılık derecesini daha net bir şekilde görülebilir. Grafik üzerindeki koyu mavi noktalar güçlü pozitif korelasyonları, koyu kırmızı noktalar ise güçlü negatif korelasyonları göstermektedir. Diğer daireler de renklerine ve büyüklüklerine göre korelasyonun gücünü ve yönünü belirtmektedir.
+
+Örneğin; Ölüm Olayı ile zaman arasında negatif yüksek korelasyonlu bir ilişki vardır.
+
+
+
+`Histogram grafikleri`
+
+```{r echo=FALSE, fig.height=3, fig.width=3}
+hist(veri$Yaş,
+     breaks = 30,
+     xlim = c(0, 5000),
+     col = "blue",
+     border = "pink",
+     ylim = c(0, 40),
+     xlab = "Yaş",
+     ylab = "Frekans",
+     main = "weightlbs icin Histogram")
+
+hist(veri$`Kreatinin Fosfokinaz`,
+     breaks = 30,
+     xlim = c(0, 5000),
+     col = "blue",
+     border = "black",
+     ylim = c(0, 40),
+     xlab = "Kreatinin Fosfokinaz",
+     ylab = "Frekans",
+     main = "weightlbs icin Histogram")
+
+hist(veri$`Enjeksiyon Fraksiyonu`,
+     breaks = 30,
+     xlim = c(0, 5000),
+     col = "blue",
+     border = "red",
+     ylim = c(0, 40),
+     xlab = "Enjeksiyon Fraksiyonu",
+     ylab = "Frekans",
+     main = "weightlbs icin Histogram")
+
+hist(veri$Zaman,
+     breaks = 30,
+     xlim = c(0, 5000),
+     col = "blue",
+     border = "yellow",
+     ylim = c(0, 40),
+     xlab = "Zaman",
+     ylab = "Frekans",
+     main = "weightlbs icin Histogram")
+```
+
+
+R programında farklı histogram kodu kullanılarak çıkartılmıştır.
+
+
+```{r echo=FALSE, fig.height=3, fig.width=3}
+hist(veri$`ÖlÜm Olayı`, main = "ÖlÜm Olayı", xlab = "ÖlÜm Olayı", ylab = "Frekans")
+
+hist(veri$Cinsiyet, main = "Cinsiyet", xlab = "Cinsiyet", ylab = "Frekans")
+
+hist(veri$`Kreatinin Fosfokinaz`, main = "Kreatinin Fosfokinaz", xlab = "Kreatinin Fosfokinaz", ylab = "Frekans")
+
+hist(veri$Yaş, main = "Yaş", xlab = "Yaş", ylab = "Frekans")
+
+hist(veri$`Enjeksiyon Fraksiyonu`, main = "Enjeksiyon Fraksiyonu", xlab = "Enjeksiyon Fraksiyonu", ylab = "Frekans")
+```
+
+Histogram grafikleri bize ortalama, standart sapma ve örneklem sayısı hakkında bilgi veren bir grafiktir. Verilerin dağılımları hakkında da ön bilgi oluşturabilir.
+
+
+`Dağılım grafikleri`
+
+
+```{r echo=FALSE, fig.height=3, fig.width=3}
+plot(veri$Zaman,veri$Diyabet ,col="red",main = "Zaman - Diyabet", xlab = "Zaman", ylab = "Diyabet", pch=15)
+
+plot(veri$Cinsiyet,veri$`Kreatinin Fosfokinaz` ,col="yellow",main = "Cinsiyet - Kreatinin Fosfokinaz", xlab = "Cinsiyet", ylab = "Kreatinin Fosfokina", pch=15)
+
+plot(veri$Yaş,veri$`Serum Sodyum` ,col="green",main = "Yaş - Serum Sodyum", xlab = "Yaş", ylab = "Serum Sodyum", pch=15)
+```
+
+
+`Kutu grafiği`
+
+```{r echo=FALSE}
+boxplot(veri)
 ```
 
 
 # Sonuç
-Bu bölümde çalışmanızın sonuçlarını özetleyiniz. Sonuçlarınızın başlangıçta belirlediğiniz araştırma sorusuna ne derece cevap verdiğini ve ileride bu çalışmanın nasıl geliştirilebileceğini tartışınız.
+Kalp yetmezliğinin ölüme neden olan sebeplerden biri olduğu bilinmektedir. Yapılan araştırmada istenilen şey kalp yetmezliği hastalarının tedavi edilmesindeki zorlukları anlamak ve tedavi sürecinde kaliteli bir yaşam sürdürebilmeleri için neler yapılması gerektiğini belirlemektir. Bizim araştırdığımız ise ölüm olayı ile faktörler arasındaki ilişkiyi matematiksel denkleme dökmekti. Araştırmada Çoklu Doğrusal Regresyon Analizi kullanılmıştır. İlk önce Normallik testi uygulanarak verilerin normal dağılıp dağılmadığı irdelenmiştir. Sonucunda ise verilerin normal dağılım gösterdiği görülmüştür. Daha sonra korelasyon matrisi oluşturulmuştur. Korelasyon analizinde ise ölüm olayı ile yaş arasında pozitif bir ilişki varken ölüm olayı ile zaman arasında negatif bir ilişki görülmektedir. Daha sonra Çoklu doğrusal regresyon uygulandığında R2 değeri 0.4168 olarak hesaplanmıştır. Bu değerin 0.30’dan büyük olması yeterli bir sonuçtur.  Sonuç olarak çoklu doğrusal regresyon modelinin ölüm olayını tahminini açıklama adına başarılı bir yöntem olduğu tespit edilmiştir. Araştırmalarımıza göre yaş, anemi, enjeksiyonel fraksiyonu, serum kreatinin ve zaman ölüm olayı için önemli faktörlerdir. Ölüm olayına hangi değişkenlerin etkilediği tespit edebilmiş belirlediğiniz araştırma sorusuna cevap verdiğini ve ileride bu çalışmanın ileri tahmin yöntemleri ile geliştirilmesi önerilmektedir. @potur2021kalp
 
-**Kaynakça bölümü Rmarkdown tarafından otomatik olarak oluşturulmaktadır. Taslak dosyada Kaynakça kısmında herhangi bir değişikliğe gerek yoktur.** 
-
-**_Taslakta bu cümleden sonra yer alan hiçbir şey silinmemelidir._**
 
 \newpage
 # Kaynakça {#references}
