@@ -1,7 +1,7 @@
 ---
 title: "Kalp Yetmezliği Hastalarında Hayatta Kalma Analizi"
 author: 
-  - İsim Soyisim[^1]
+  - METIN HACIYEV[^1]
 bibliography: ../bibliography/biblio.bib
 csl: ../csl/apa-tr.csl
 header-includes:
@@ -68,7 +68,7 @@ analiz ederek, hastaların kalp yetmezliğine bağlı olarak hayatta kalma veya 
 `Veri R'a yüklenmiştir.`
 
 ```{r include=FALSE}
-veri=read.csv("C:\Users\ASUS\Desktop\heart_failure_clinical_records_dataset.csv")
+veri=read.csv("C:/Users/ASUS/Desktop/heart_failure_clinical_records_dataset.csv")
 veri
 ```
 `Verideki değişkenlerin isimlerini değiştirelim`
